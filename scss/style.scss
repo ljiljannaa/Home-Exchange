@@ -1,0 +1,476 @@
+@import 'vars';
+@import 'mixins';
+
+@include main;
+
+header {
+    @include clearfix;
+
+    .location {
+        float: left;
+        background-color: $orange;
+        width: 20%;
+        padding: 1em 2em;
+
+        img {
+            position: absolute;
+            top: 0.5em;
+            left: 1.5em;
+            width: 2em;
+        }
+
+        a {
+            padding-left: 1.3em;
+            color: white;
+        }
+    }
+
+    nav {
+        background-color: $dark-blue;
+        float: right;
+        width: 80%;
+        padding: 1em 2em;
+
+        ul {
+            list-style: none;
+
+            li{
+                display: inline-block;                
+
+                a {
+                    text-decoration: none;
+                    color: white;
+                    margin-right: 4em;
+                    font-size: 13px;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+main, section {
+    padding: 2em 12em;
+}
+
+main {
+    background-image: url("../slike/intro.jpg");
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+
+    .main-box {
+        margin-top: 40%;
+        background-color: $main-box-bg;
+
+        h1, p {
+            color: white;
+            font-weight: normal;
+        }
+
+        h1 {
+            font-size: 3em;
+        }
+    }
+}
+
+.button {
+    text-align: right;
+
+    a {
+        border: 1px solid $hover;
+        border-radius: 30px;
+        padding: 1em 2em;
+        text-decoration: none;
+        color: $font-color;
+        margin-left: 1.5em;
+        font-size: 13px;
+
+        &:hover {
+            background-color: $hover;
+            color: white;
+        }
+    }
+}
+
+.pictures {
+    background-color: $section-bg;
+    @include clearfix;
+
+    .boxes {
+        float: left;
+        width: 22%;
+        
+        .box-info {
+            background-size: cover;
+            height: 15em;
+            margin: 0.5em;
+
+            p {
+                display: none;
+                padding: 1em;
+                font-weight: bold;
+                font-size: 16px;
+                background-color: rgba($color: white, $alpha: 0.6);
+            }
+        }
+
+        .box1 {
+            background-image: url("../slike/1.jpg");
+        }
+        .box2 {
+            background-image: url("../slike/2.jpg");
+        }
+        .box3 {
+            background-image: url("../slike/3.jpg");
+        }
+        .box4 {
+            background-image: url("../slike/4.jpg");
+        }
+        .box5 {
+            background-image: url("../slike/5.jpg");
+        }
+        .box6 {
+            background-image: url("../slike/6.jpg");
+        }
+
+        &:hover p {
+            display: block;
+        }
+    }
+}
+
+.pricing {
+
+    h2 {
+        color: $header;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 2em;
+    }
+
+    p {
+        color: $font-color;
+        font-size: 1em;
+        text-align: center;
+        margin-bottom: 1.5em;
+    }
+
+    table {
+        width: 70%;
+        margin: auto;
+        text-align: center;
+        border-collapse: collapse;
+        color: $font-color;
+    
+        tr {
+
+            td {
+                border: 1px solid $font-color;
+                padding: 0.5em 2em;
+            }
+
+            #none {
+                border: none;
+            }
+
+            #first {
+                background-color: $orange;
+                color: white;
+            }
+
+            #second {
+                background-color: $dark-blue;
+                color: white;
+            }
+        }
+    }
+
+    .button {
+        text-align: center;
+        display: none;
+
+        a {
+            border: 1px solid $hover;
+            border-radius: 30px;
+            padding: 1em 2em;
+            text-decoration: none;
+            color: $font-color;
+            margin-left: 1.5em;
+            font-size: 13px;
+            display: inline-block;
+    
+            &:hover {
+                background-color: $hover;
+                color: white;
+            }
+        }
+    }
+    
+}
+
+.contact {
+    background-color: $section-bg;
+    @include clearfix;
+
+    h2 {
+        color: $header;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 2em;
+    }
+
+    .map {
+        float: left;
+        width: 50%;
+    }
+
+    form {
+        float: right;
+        width: 50%;
+        background-color: $orange;
+        padding: 1em;
+
+        input, textarea {
+            padding: 0.4em;
+            border: none;
+        }
+
+        select {
+            margin-bottom: 1em;
+            float: left;
+            width: 30%;
+            padding: 0.4em;
+            border: none;
+        }
+
+        #name {
+            margin-bottom: 1em;
+            float: right;
+            width: 65%;
+        }
+
+        #email {
+            display: block;
+            width: 100%;
+            margin: auto;
+            margin-bottom: 1em;
+        }
+
+        textarea {
+            display: block;
+            width: 100%;
+            margin: auto;
+        }
+    }
+}
+
+footer {
+    background-color: $dark-blue;
+    padding: 0.5em;
+    color: white;
+    text-align: center;
+
+    span {
+        color: $orange;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    main {
+        padding: 2em 15em;
+    }
+
+    .pictures {
+        padding: 2em 15em;
+        
+        .boxes {
+            float: left;
+            width: 50%;
+            padding: 0.5em;
+            
+            .box-info {
+                background-size: cover;
+                width: 100%;
+                margin: 0.5em auto;
+            }
+        }
+    }
+
+    .pricing {
+        padding: 2em 5em;
+    }
+
+    .contact {
+        padding: 2em 5em;
+
+        .map {
+            float: none;
+            width: 40%;
+            margin: auto;
+            margin-bottom: 1em;
+
+            iframe {
+                width: 100%;
+                margin: auto;
+            }
+        }
+    
+        form {
+            float: none;
+            width: 70%;
+            background-color: $orange;
+            padding: 1em;
+            display: block;
+            margin: auto;
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+
+    header {
+
+        .location {
+            width: 100%;
+        }
+    
+        nav {
+            width: 100%;
+    
+            ul {
+
+                li{
+                    display: block;   
+                    text-align: center; 
+                    padding: 1em;            
+    
+                    a {
+                        margin-right: 0;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        padding: 0 0 4em 0;
+        background-image: none;
+        background-color: black;
+        height: auto;
+        width: 100%;
+        text-align: center;
+    
+        .main-box {
+            margin-top: 0;
+            background-color: black;
+            width: 100%;  
+
+            h1, p {
+                display: block;
+                color: white;
+                font-weight: normal;
+            }
+    
+            h1 {
+                font-size: 3em;
+            }
+        }
+        
+    }
+
+    .button {
+        text-align: center;
+        padding: 1em 0;
+    
+        a {
+            margin: 0 1.5em 0 1.5em;
+            font-size: 13px;
+            display: inline-block;
+    
+            &:hover {
+                background-color: $hover;
+                color: white;
+            }
+        }
+    }
+
+    .pictures {
+        padding: 2em 0.5em;
+        
+        .boxes {
+            float: left;
+            width: 100%;
+            padding: 0.5em;
+            
+            .box-info {
+                background-size: cover;
+                width: 100%;
+                margin: 0.5em auto;
+
+                p {
+                    display: block;
+                }
+            }
+
+            &:hover p {
+                display: none;
+            }
+        }
+    }
+
+    .pricing {
+
+        table {
+            display: none;
+        }
+
+        .button {
+            display: block;
+        }
+    }
+
+    .contact {
+        padding: 2em 1em;
+
+        .map {
+            float: none;
+            width: 90%;
+            margin: auto;
+            margin-bottom: 1em;
+
+            iframe {
+                width: 100%;
+                margin: auto;
+            }
+        }
+    
+        form {
+            float: none;
+            width: 100%;
+            background-color: $orange;
+            padding: 1em;
+            display: block;
+            margin: auto;
+
+            select {
+                float: none;
+                display: block;
+                width: 100%;
+            }
+    
+            #name {
+                float: none;
+                width: 100%;
+                display: block;
+            }
+        }
+    }
+}
+
